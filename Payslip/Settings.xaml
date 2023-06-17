@@ -1,0 +1,128 @@
+﻿<Window x:Class="Payslip.Settings"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Payslip"
+        mc:Ignorable="d"
+        FontSize="18" FontWeight="DemiBold" Title="Settings" 
+        Height="550" Width="365" MinHeight="550" MinWidth="355">
+        <Window.Background>
+            <ImageBrush ImageSource="Resources/background.bmp"/>
+        </Window.Background>
+
+    <!-- grid columns and rows are created -->
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="20"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="10"/>
+        </Grid.RowDefinitions>
+
+        <!-- the various UI elements are added to the grid -->
+        <TextBlock Grid.Column="1" Grid.Row="1" 
+                   Text="Hourly rate"
+                   HorizontalAlignment="Center"
+                   Grid.ColumnSpan="2" Margin="0, 5, 0, 10"/>
+
+        <!-- textbox text value is bound to the default value stored in 
+             application properties. the default value will be replaced 
+             with the current value when the Apply button is clicked 
+             (same for every textbox on this window) -->
+        <TextBox x:Name="HourlyRateTBox" Grid.Column="1" 
+                 Grid.Row="2" Width="100" TextAlignment="Center"
+                 HorizontalAlignment="Center" Grid.ColumnSpan="2"
+                 Text="{Binding Source={StaticResource Settings}, 
+                 Path=Default.HRate}"/>
+
+        <TextBlock Grid.Column="1" Grid.Row="3" 
+                   Text="Overtime rate"
+                   HorizontalAlignment="Center"
+                   Grid.ColumnSpan="2" Margin="0, 15, 0, 10"/>
+
+        <TextBox x:Name="OvertimeRateTbox" Grid.Column="1" 
+                 Grid.Row="4" Width="100" TextAlignment="Center"
+                 HorizontalAlignment="Center" Grid.ColumnSpan="2"
+                 Text="{Binding Source={StaticResource Settings}, 
+                 Path=Default.ORate}"/>
+
+        <TextBlock Grid.Column="1" Grid.Row="5" 
+                   Text="Sickpay per day"
+                   HorizontalAlignment="Center"
+                   Grid.ColumnSpan="2" Margin="0, 15, 0, 10"/>
+
+        <TextBox x:Name="SickPayRateTbox" Grid.Column="1" 
+                 Grid.Row="6" Width="100" TextAlignment="Center"
+                 HorizontalAlignment="Center" Grid.ColumnSpan="2"
+                 Text="{Binding Source={StaticResource Settings}, 
+                 Path=Default.SRate}"/>
+
+        <TextBlock Grid.Column="1" Grid.Row="7" 
+                   Text="Pension contribution &#x0a;(%)"
+                   TextAlignment="Center"
+                   HorizontalAlignment="Center"
+                   Grid.ColumnSpan="2" Margin="0, 15, 0, 10"/>
+
+        <TextBox x:Name="PensionPercentTbox" Grid.Column="1" 
+                 Grid.Row="8" Width="100" TextAlignment="Center"
+                 HorizontalAlignment="Center" Grid.ColumnSpan="2"
+                 Text="{Binding Source={StaticResource Settings}, 
+                 Path=Default.PensProc}"/>
+
+        <TextBlock Grid.Column="1" Grid.Row="9" 
+                   Text="Personal allowance &#x0a;(per year)"
+                   TextAlignment="Center"
+                   HorizontalAlignment="Center"
+                   Grid.ColumnSpan="2" Margin="0, 15, 0, 10"/>
+
+        <TextBox x:Name="TaxAllowanceTbox" Grid.Column="1" 
+                 Grid.Row="10" Width="100" TextAlignment="Center"
+                 HorizontalAlignment="Center" Grid.ColumnSpan="2"
+                 Text="{Binding Source={StaticResource Settings}, 
+                 Path=Default.PersAllow}"/>
+
+        <Button x:Name="ApplyBtn" Content="Apply" 
+                Grid.Column="1" Grid.Row="11" Grid.ColumnSpan="1"
+                Width="100" Height="35" Margin="30,30,25,0"
+                FontSize="16" Foreground="DarkGreen"
+                FontWeight="DemiBold" HorizontalAlignment="Left" 
+                Click="ApplyBtn_Click">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="7"></Setter>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+        <Button x:Name="CancelBtn" Content="Cancel" 
+                Grid.Column="2" Grid.Row="11" Grid.ColumnSpan="1"
+                Width="100" Height="35" Margin="25,30,30,0"
+                FontWeight="Bold" HorizontalAlignment="Right"
+                Foreground="DarkRed" Click="CancelBtn_Click">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="7"></Setter>
+                </Style>
+            </Button.Resources>
+        </Button>
+    </Grid>
+</Window>

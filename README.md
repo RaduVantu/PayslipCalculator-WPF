@@ -21,6 +21,22 @@
 <h3> Technology used </h3>
 <a href="https://visualstudio.microsoft.com/vs/older-downloads/">Microsoft Visual Studio 2019</a>
 
-<h3> Screenshots </h3>
-
-<p> Coming soon </p>
+<h3> Images </h3>
+<br/>
+<br/>
+<p align="center"> 
+	Main window <br/>
+	<a href="https://imgur.com/USdY3Aq"><img src="https://i.imgur.com/USdY3Aq.png" title="source: imgur.com" /></a>
+	<br/>
+	<br/>
+	Results window <br/>
+	<a href="https://imgur.com/gjdNxTh"><img src="https://i.imgur.com/gjdNxTh.png" title="source: imgur.com" /></a>
+  	<br/>
+	<br/>
+  	Set rates window <br/>
+	<a href="https://imgur.com/J6x1HG9"><img src="https://i.imgur.com/J6x1HG9.png" title="source: imgur.com" /></a>
+	<br/>
+	<br/>
+  	Input validation <br/>
+	<a href="https://imgur.com/XLaTHFg"><img src="https://i.imgur.com/XLaTHFg.png" title="source: imgur.com" /></a>
+</p>
